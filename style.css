@@ -1,0 +1,207 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BASIC PAGE SETTINGS
+========================= */
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   WELCOME PAGE
+========================= */
+
+.welcome-page {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    background-image: url("birthday-bg.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =========================
+   DARK OVERLAY
+========================= */
+
+.welcome-page::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    padding: 30px 20px;
+}
+
+
+/* =========================
+   "INVITATION"
+========================= */
+
+.invitation-text {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: clamp(4px, 1vw, 9px);
+
+    margin-bottom: 1.2rem;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   "TO MY 21st"
+========================= */
+
+h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(3rem, 9vw, 8rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    letter-spacing: clamp(2px, 0.8vw, 8px);
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 15px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================
+   XOXO
+========================= */
+
+.xoxo {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1rem, 2vw, 1.5rem);
+
+    letter-spacing: clamp(5px, 1vw, 10px);
+
+    margin-top: 1.8rem;
+
+    margin-bottom: 2.5rem;
+
+    color: #d4af37;
+}
+
+
+/* =========================
+   CONTINUE LINK
+========================= */
+
+.continue-link {
+    display: inline-block;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border: 1px solid #d4af37;
+
+    padding: 1rem 2rem;
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+
+    letter-spacing: 3px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effect on computer */
+
+.continue-link:hover {
+    background: #d4af37;
+
+    color: #000000;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   SMALL PHONE SCREENS
+========================= */
+
+@media (max-width: 480px) {
+
+    .welcome-content {
+        width: 94%;
+        padding: 20px 10px;
+    }
+
+    .invitation-text {
+        letter-spacing: 4px;
+    }
+
+    h1 {
+        line-height: 1.05;
+    }
+
+    .xoxo {
+        margin-top: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .continue-link {
+        padding: 0.85rem 1.5rem;
+        letter-spacing: 2px;
+    }
+}

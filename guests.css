@@ -1,0 +1,632 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000;
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.guest-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: clamp(55px, 7vw, 100px) 5%;
+
+    background:
+        radial-gradient(
+            circle at center top,
+            #191919 0%,
+            #080808 45%,
+            #000 100%
+        );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.guest-header {
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    margin-bottom: clamp(55px, 7vw, 90px);
+}
+
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.65rem, 1vw, 0.8rem);
+
+    letter-spacing: 6px;
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+}
+
+
+.guest-header h1 {
+    font-size: clamp(2rem, 5.5vw, 5rem);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    letter-spacing: clamp(2px, 0.5vw, 7px);
+}
+
+
+.gold-line {
+    width: 80px;
+
+    height: 1px;
+
+    background: #d4af37;
+
+    margin: 28px auto;
+}
+
+
+.guest-intro {
+    max-width: 620px;
+
+    margin: 0 auto;
+
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+
+    line-height: 1.8;
+
+    color: #bdbdbd;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================
+   GUEST GRID
+========================= */
+
+.guest-grid {
+    width: 100%;
+
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================
+   CARD CONTAINER
+========================= */
+
+.guest-card {
+    width: 100%;
+
+    height: 220px;
+
+    perspective: 1200px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   CARD INNER
+========================= */
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transition: transform 0.8s cubic-bezier(
+        0.2,
+        0.8,
+        0.2,
+        1
+    );
+
+    transform-style: preserve-3d;
+}
+
+
+/* FLIPPED STATE */
+
+.guest-card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* =========================
+   CARD SIDES
+========================= */
+
+.card-front,
+.card-back {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.045),
+            rgba(255,255,255,0.01)
+        );
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   FRONT
+========================= */
+
+.card-front::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 17px;
+    right: 20px;
+
+    color: #d4af37;
+
+    font-size: 18px;
+}
+
+
+.guest-number {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+
+    color: #d4af37;
+
+    margin-bottom: 18px;
+}
+
+
+.guest-name {
+    font-size: clamp(1.2rem, 2vw, 1.7rem);
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+.click-message {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.card-back {
+    transform: rotateY(180deg);
+
+    border-color: #d4af37;
+
+    padding: 30px;
+}
+
+
+.confirm-title {
+    font-size: 1rem;
+
+    letter-spacing: 3px;
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+}
+
+
+.confirm-text {
+    font-family: Arial, sans-serif;
+
+    font-size: 0.8rem;
+
+    line-height: 1.7;
+
+    color: #bdbdbd;
+
+    max-width: 320px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   CONFIRM BUTTON
+========================= */
+
+.confirm-button {
+    border: 1px solid #d4af37;
+
+    background: transparent;
+
+    color: white;
+
+    padding: 12px 24px;
+
+    border-radius: 25px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.confirm-button:hover {
+    background: #d4af37;
+
+    color: #000;
+}
+
+
+/* =========================
+   CONFIRMED
+========================= */
+
+.guest-card.confirmed .card-back {
+    border-color: #d4af37;
+}
+
+
+.guest-card.confirmed .confirm-button {
+    background: #d4af37;
+
+    color: #000;
+
+    cursor: default;
+
+    pointer-events: none;
+}
+
+
+.confirmed-mark {
+    display: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+
+    color: #d4af37;
+}
+
+
+.guest-card.confirmed .confirmed-mark {
+    display: block;
+}
+
+
+/* =========================
+   PERSONAL LETTER
+========================= */
+
+.personal-letter {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+}
+
+
+.personal-letter.show {
+    display: flex;
+
+    animation: fadeIn 0.4s ease;
+}
+
+
+.letter {
+    position: relative;
+
+    width: min(500px, 100%);
+
+    padding: clamp(35px, 6vw, 60px);
+
+    background:
+        linear-gradient(
+            145deg,
+            #171717,
+            #050505
+        );
+
+    border: 1px solid #d4af37;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    animation: letterAppear 0.5s ease;
+}
+
+
+.letter-heart {
+    color: #d4af37;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.letter h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+
+    font-weight: 400;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+.letter p {
+    font-family: Arial, sans-serif;
+
+    color: #cfcfcf;
+
+    font-size: clamp(0.85rem, 1.5vw, 1rem);
+
+    line-height: 1.9;
+}
+
+
+.letter-signature {
+    margin-top: 25px;
+
+    color: #d4af37 !important;
+
+    font-family: Georgia, "Times New Roman", serif !important;
+
+    font-size: 1.1rem !important;
+
+    font-style: italic;
+}
+
+
+/* CLOSE LETTER */
+
+.close-letter {
+    margin-top: 30px;
+
+    border: 1px solid #555;
+
+    background: transparent;
+
+    color: #aaa;
+
+    padding: 10px 22px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+    letter-spacing: 2px;
+
+    font-size: 0.65rem;
+}
+
+
+/* =========================
+   NEXT
+========================= */
+
+.next-section {
+    text-align: center;
+
+    margin-top: 90px;
+}
+
+
+.next-section a {
+    display: inline-block;
+
+    padding: 15px 45px;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+
+    transition: all 0.3s ease;
+}
+
+
+.next-section a:hover {
+    background: #d4af37;
+
+    color: #000;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.9) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .guest-page {
+        padding: 50px 6%;
+    }
+
+
+    .guest-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .guest-card {
+        height: 210px;
+    }
+
+
+    .guest-header h1 {
+        letter-spacing: 2px;
+    }
+
+
+    .letter {
+        padding: 40px 25px;
+    }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .card-inner,
+    .personal-letter,
+    .letter {
+        transition: none;
+
+        animation: none;
+    }
+
+}

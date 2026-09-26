@@ -1,0 +1,430 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.details-page {
+    width: 100%;
+    min-height: 100vh;
+
+    padding: clamp(55px, 7vw, 100px) 5vw;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #171717 0%,
+            #080808 48%,
+            #000000 100%
+        );
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.details-header {
+    text-align: center;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    margin-bottom: clamp(55px, 8vw, 100px);
+}
+
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.65rem, 1vw, 0.85rem);
+
+    letter-spacing: 6px;
+
+    color: #d4af37;
+
+    margin-bottom: 20px;
+}
+
+
+.details-header h1 {
+    font-size: clamp(2rem, 5.5vw, 5.5rem);
+
+    font-weight: 400;
+
+    letter-spacing: clamp(2px, 0.6vw, 7px);
+
+    line-height: 1.1;
+
+    color: #ffffff;
+}
+
+
+.gold-line {
+    width: 80px;
+
+    height: 1px;
+
+    background: #d4af37;
+
+    margin: 28px auto 0;
+}
+
+
+/* =========================
+   DETAIL ROW
+========================= */
+
+.detail-row {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: clamp(30px, 6vw, 100px);
+
+    margin-bottom: clamp(45px, 7vw, 85px);
+}
+
+
+/* =========================
+   ALTERNATING ROW
+========================= */
+
+.detail-row.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* =========================
+   DETAIL BOX
+========================= */
+
+.detail-box {
+    width: min(400px, 42%);
+
+    padding: clamp(24px, 3vw, 38px);
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.025);
+
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        background 0.4s ease;
+}
+
+
+.detail-box:hover {
+    transform: translateY(-5px);
+
+    border-color: #d4af37;
+
+    background: rgba(212, 175, 55, 0.045);
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.detail-number {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 4px;
+
+    color: #d4af37;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.detail-box h2 {
+    font-size: clamp(1rem, 1.7vw, 1.45rem);
+
+    font-weight: 400;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   MAIN DETAIL
+========================= */
+
+.main-detail {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.85rem, 1.3vw, 1rem);
+
+    line-height: 1.6;
+
+    color: #dedede;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================
+   SIDE NOTES
+========================= */
+
+.side-note {
+    width: min(420px, 42%);
+
+    padding: 10px 10px;
+
+    color: #cfcfcf;
+}
+
+
+.note-label {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 4px;
+
+    color: #d4af37;
+
+    margin-bottom: 15px;
+}
+
+
+.side-note p {
+    font-family: Arial, sans-serif;
+
+    font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+
+    line-height: 1.8;
+
+    color: #bdbdbd;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown {
+    display: flex;
+
+    align-items: center;
+
+    gap: clamp(10px, 2vw, 25px);
+}
+
+
+.countdown div {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.countdown span {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+
+    color: #ffffff;
+
+    line-height: 1;
+}
+
+
+.countdown small {
+    margin-top: 8px;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 2px;
+
+    color: #8d8d8d;
+}
+
+
+/* =========================
+   RSVP
+========================= */
+
+.next-section {
+    text-align: center;
+
+    margin-top: clamp(70px, 10vw, 120px);
+}
+
+
+.next-section a {
+    display: inline-block;
+
+    padding: 15px 45px;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 30px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 0.75rem;
+
+    letter-spacing: 4px;
+
+    transition: all 0.3s ease;
+}
+
+
+.next-section a:hover {
+    background: #d4af37;
+
+    color: #000000;
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 800px) {
+
+    .detail-row,
+    .detail-row.reverse {
+        gap: 35px;
+    }
+
+    .detail-box,
+    .side-note {
+        width: 47%;
+    }
+
+}
+
+
+/* =========================
+   PHONES
+========================= */
+
+@media (max-width: 600px) {
+
+    .details-page {
+        padding: 50px 6%;
+    }
+
+
+    .details-header {
+        margin-bottom: 60px;
+    }
+
+
+    .details-header h1 {
+        letter-spacing: 2px;
+    }
+
+
+    /* Stack everything vertically */
+
+    .detail-row,
+    .detail-row.reverse {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 22px;
+
+        margin-bottom: 50px;
+    }
+
+
+    .detail-box,
+    .side-note {
+        width: 100%;
+    }
+
+
+    .detail-box {
+        padding: 25px;
+
+        border-radius: 16px;
+    }
+
+
+    .side-note {
+        padding: 0 5px;
+    }
+
+
+    .countdown {
+        gap: 15px;
+    }
+
+
+    .countdown span {
+        font-size: 1.7rem;
+    }
+
+
+    .next-section {
+        margin-top: 65px;
+    }
+
+}
