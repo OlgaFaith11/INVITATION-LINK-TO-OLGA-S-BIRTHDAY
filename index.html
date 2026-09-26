@@ -9,6 +9,7 @@
     <title>My 21st Birthday</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="birthdaySong.mp3" as="audio" type="audio/mpeg">
 </head>
 
 <body>
@@ -32,9 +33,10 @@
         </div>
 
     </section>
-<audio id="birthdayMusic"
-       src="birthdaySong.mp3"
-       preload="auto">
+
+<audio id="birthdayMusic" preload="auto">
+    <source src="birthdaySong.mp3" type="audio/mpeg">
+
 </audio>
 
 <script>
