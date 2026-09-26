@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the website adapt to phones, tablets and computers -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My 21st Birthday</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- WELCOME PAGE -->
+    <section class="welcome-page">
+
+        <div class="welcome-content">
+
+            <p class="invitation-text">INVITATION</p>
+
+            <h1>TO MY 21st</h1>
+
+            <p class="xoxo">XOXO</p>
+
+            <!-- Link to the next HTML page -->
+            <a href="invitation.html" class="continue-link" id="startMusic">
+                CONTINUE
+            </a>
+
+        </div>
+
+    </section>
+<audio id="birthdayMusic"
+       src="birthdaySong.mp3"
+       preload="auto">
+</audio>
+
+<script>
+    const music = document.getElementById("birthdayMusic");
+    const startMusic = document.getElementById("startMusic");
+
+    startMusic.addEventListener("click", function () {
+
+        music.play();
+
+        sessionStorage.setItem("musicStarted", "true");
+        sessionStorage.setItem(
+            "musicTime",
+            music.currentTime
+        );
+
+    });
+</script>
+
+<script src="music.js"></script>
+
+</body>
+</html>
